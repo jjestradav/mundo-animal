@@ -1,0 +1,17 @@
+vertebrado
+insecto
+aracnido
+$
+$
+$
+mamifero
+ave
+reptil
+pez
+anfibio
+$
+$
+$
+$
+$
+$
