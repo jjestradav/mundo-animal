@@ -9,7 +9,14 @@ int main() {
 	}
 	Arbol a;
 	a.crearArbol(archivo);
-	a.preOrden();
+	// a.preOrden();
 	
+	char continuar = 'S';
+
+	do {
+		a.juego();
+		std::cout << "Continuar: ";
+		std::cin >> continuar;
+	} while (continuar == 'S'); 
 	return 0;
 }
