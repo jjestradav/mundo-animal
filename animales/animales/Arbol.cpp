@@ -18,7 +18,7 @@ void Arbol::destruirArbol(Nodo* actual){
 
 void Arbol::recorridoPreOrden(Nodo* actual) { 
 	if (actual) {
-		std::cout << actual->palabra;
+		std::cout << actual->info->toString() << std::endl;
 		std::cout << " ";
 		recorridoPreOrden(actual->left);
 		recorridoPreOrden(actual->right);
@@ -28,11 +28,14 @@ void Arbol::recorridoPreOrden(Nodo* actual) {
 Nodo* Arbol::cargarArbolArchivo(std::ifstream& archivo) {
 	std::string palabraArchivo;
 	Nodo* tmp;
-	archivo >> palabraArchivo;
+	std::getline(archivo, palabraArchivo, '\n');
 	if (palabraArchivo == "$")
 		return nullptr;
 	tmp = new Nodo;
-	tmp->palabra = palabraArchivo;
+	if (palabraArchivo[0] == '1') 
+		tmp->info = new AnimalCaracteristica(palabraArchivo.substr(1, palabraArchivo.length())); // caracteristica
+	else
+		tmp->info = new AnimalConcreto(palabraArchivo.substr(1, palabraArchivo.length())); // animal
 	tmp->left = cargarArbolArchivo(archivo);
 	tmp->right = cargarArbolArchivo(archivo);
 	return tmp;

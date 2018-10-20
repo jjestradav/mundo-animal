@@ -3,9 +3,11 @@
 #include<string>
 #include<iostream>
 #include<fstream>
+#include"AnimalCaracteristica.h"
+#include"AnimalConcreto.h"
 
 struct Nodo {
-	std::string palabra;
+	Animal* info;
 	Nodo* left;
 	Nodo* right;
 };

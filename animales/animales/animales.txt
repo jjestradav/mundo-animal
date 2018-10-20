@@ -1,17 +1,8 @@
-vertebrado
-insecto
-aracnido
+1es vertebrado
+0mariposa
 $
 $
-$
-mamifero
-ave
-reptil
-pez
-anfibio
+0perro
 $
 $
-$
-$
-$
-$
+

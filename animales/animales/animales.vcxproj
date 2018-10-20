@@ -115,10 +115,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="AnimalCaracteristica.cpp" />
+    <ClCompile Include="AnimalConcreto.cpp" />
     <ClCompile Include="Arbol.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="AnimalCaracteristica.h" />
+    <ClInclude Include="AnimalConcreto.h" />
     <ClInclude Include="Arbol.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
