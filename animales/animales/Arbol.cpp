@@ -10,6 +10,15 @@ void Arbol::crearArbol(std::ifstream& archivo) { root = cargarArbolArchivo(archi
 
 void Arbol::juego() { root = recorridoJuego(root); }
 
+void Arbol::bajarCaracteristica(int alto, int bajo) {
+	if (alto == 1) {
+		
+	}
+	else {
+		root = recorridoCaracteristica(root, alto, bajo - alto);
+	}
+}
+
 void Arbol::destruirArbol(Nodo* actual){
 	if (actual) {
 		destruirArbol(actual->left);
@@ -112,4 +121,27 @@ std::string Arbol::preguntarCaracteristica(std::istream& entrada) {
 		entrada.clear();
 	}
 	return expresion;
+}
+
+Nodo * Arbol::buscarNIzquierda(Nodo* actual, int nivel) {
+	if (!actual || nivel == 1)
+		return actual;
+	else
+		return buscarNIzquierda(actual->left, nivel - 1);
+}
+
+Nodo * Arbol::recorridoCaracteristica(Nodo* actual, int alto, int bajo) {
+	if (!actual)
+		actual = nullptr;
+	else if (alto == 1) {
+		Nodo* posicionar = buscarNIzquierda(actual->left, bajo); // busco desde el nivel del elemento que hay que bajar, hasta el nivel que quiere bajar
+		Nodo* bajar = actual; // respaldar al que hay que bajar
+		actual = actual->left; // subir el sub-arbol que se encuentra a la izquierda,
+		bajar->left = posicionar->left; // colocar al que hay que bajar
+		posicionar->left = bajar; // subir 
+	}
+	else
+		actual->left = recorridoCaracteristica(actual->left, alto - 1, bajo);
+
+	return actual;
 }

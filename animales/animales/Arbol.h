@@ -20,6 +20,7 @@ public:
 	void preOrden();
 	void crearArbol(std::ifstream&);
 	void juego();
+	void bajarCaracteristica(int, int);
 private:
 	Nodo* root;
 	void destruirArbol(Nodo*);
@@ -29,6 +30,8 @@ private:
 	Nodo* recorridoJuego(Nodo*);
 	std::string preguntarAnimal(std::istream&);
 	std::string preguntarCaracteristica(std::istream&);
+	Nodo* buscarNIzquierda(Nodo*, int);
+	Nodo* recorridoCaracteristica(Nodo*, int, int);
 };
 
 #endif
