@@ -1,8 +1,15 @@
 1es vertebrado
+1tiene 8 patas
 0mariposa
 $
 $
+0aranhia
+$
+$
+1maulla
 0perro
 $
 $
-
+0gato
+$
+$

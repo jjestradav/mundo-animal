@@ -8,7 +8,14 @@ void Arbol::preOrden() { recorridoPreOrden(root); }
 
 void Arbol::crearArbol(std::ifstream& archivo) { root = cargarArbolArchivo(archivo); }
 
-void Arbol::juego() { root = recorridoJuego(root); }
+void Arbol::juego() 
+
+{ 
+	
+	root = recorridoJuego(root); 
+	this->save();
+	
+}
 
 void Arbol::bajarCaracteristica(int alto, int bajo) {
 	if (alto == 1) {
@@ -17,6 +24,15 @@ void Arbol::bajarCaracteristica(int alto, int bajo) {
 	else {
 		root = recorridoCaracteristica(root, alto, bajo - alto);
 	}
+}
+
+void Arbol::save()
+{
+	std::fstream file;
+	std::string ruta = "animales.txt";
+	file.open(ruta.c_str(), std::ios::out);
+	this->save(file, root);
+	file.close();
 }
 
 void Arbol::destruirArbol(Nodo* actual){
@@ -143,5 +159,27 @@ Nodo * Arbol::recorridoCaracteristica(Nodo* actual, int alto, int bajo) {
 	else
 		actual->left = recorridoCaracteristica(actual->left, alto - 1, bajo);
 
-	return actual;
+	return actual;	
 }
+
+void Arbol::save(std::fstream & file, Nodo * actual)
+{
+	if (!actual) {
+		file << "$\n";
+		return;
+	}
+	std::string tipo = typeid(*actual->info).name();
+	std::string aux = "0";
+	if (tipo == "class AnimalConcreto")
+		file << actual->info->toStringV2();
+	else
+		file << actual->info->toStringV2();
+
+	save(file, actual->left);
+	save(file, actual->right);
+
+}
+
+
+
+

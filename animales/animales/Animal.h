@@ -10,6 +10,7 @@ public:
 	Animal(std::string);
 	virtual ~Animal();
 	virtual std::string toString() = 0;
+	virtual std::string toStringV2()= 0;
 };
 
 #endif

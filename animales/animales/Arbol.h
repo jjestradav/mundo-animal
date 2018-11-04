@@ -21,6 +21,7 @@ public:
 	void crearArbol(std::ifstream&);
 	void juego();
 	void bajarCaracteristica(int, int);
+	void save();
 private:
 	Nodo* root;
 	void destruirArbol(Nodo*);
@@ -32,6 +33,8 @@ private:
 	std::string preguntarCaracteristica(std::istream&);
 	Nodo* buscarNIzquierda(Nodo*, int);
 	Nodo* recorridoCaracteristica(Nodo*, int, int);
+	void save(std::fstream& file, Nodo* actual);
+
 };
 
 #endif

@@ -8,6 +8,7 @@ public:
 	AnimalCaracteristica(std::string);
 	~AnimalCaracteristica();
 	std::string toString();
+	std::string toStringV2();
 };
 
 #endif // !ANIMALCARACTERISTICA_H

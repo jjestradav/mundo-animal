@@ -7,6 +7,7 @@ public:
 	AnimalConcreto(std::string);
 	~AnimalConcreto();
 	std::string toString();
+	std::string toStringV2();
 };
 
 #endif 
