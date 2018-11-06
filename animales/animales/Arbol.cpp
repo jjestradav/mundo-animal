@@ -8,12 +8,9 @@ void Arbol::preOrden() { recorridoPreOrden(root); }
 
 void Arbol::crearArbol(std::ifstream& archivo) { root = cargarArbolArchivo(archivo); }
 
-void Arbol::juego() 
-
-{ 
+void Arbol::juego() { 
 	
-	root = recorridoJuego(root); 
-	this->save();
+	root = recorridoJuego(root);
 	
 }
 
@@ -168,12 +165,7 @@ void Arbol::save(std::fstream & file, Nodo * actual)
 		file << "$\n";
 		return;
 	}
-	std::string tipo = typeid(*actual->info).name();
-	std::string aux = "0";
-	if (tipo == "class AnimalConcreto")
-		file << actual->info->toStringV2();
-	else
-		file << actual->info->toStringV2();
+	file << actual->info->toStringV2();
 
 	save(file, actual->left);
 	save(file, actual->right);

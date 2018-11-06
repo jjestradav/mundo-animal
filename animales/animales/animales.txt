@@ -1,15 +1,35 @@
 1es vertebrado
-1tiene 8 patas
 0mariposa
 $
 $
-0aranhia
-$
-$
-1maulla
+1es un ave
+1es un anfibio
+1es un reptil
+1es un pez
 0perro
 $
 $
-0gato
+0tiburon
+$
+$
+1puede nadar muy rapido
+0cocodrilo
+$
+$
+0tortuga
+$
+$
+1es una rana venenosa
+0salamandra
+$
+$
+0rana flecha roja y azul
+$
+$
+1tiene un pico largo
+0carpintero
+$
+$
+0pelicano
 $
 $

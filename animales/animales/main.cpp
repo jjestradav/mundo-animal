@@ -18,5 +18,6 @@ int main() {
 		std::cout << "Continuar: ";
 		std::cin >> continuar;
 	} while (continuar == 'S'); 
+	a.save();
 	return 0;
 }
