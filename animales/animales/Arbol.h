@@ -21,6 +21,7 @@ public:
 	void crearArbol(std::ifstream&);
 	void juego();
 	void bajarCaracteristica(int, int);
+	void mostrarEspeciales();
 	void save();
 private:
 	Nodo* root;
@@ -34,6 +35,7 @@ private:
 	Nodo* buscarNIzquierda(Nodo*, int);
 	Nodo* recorridoCaracteristica(Nodo*, int, int);
 	void save(std::fstream& file, Nodo* actual);
+	void recorridoIzquierda(Nodo*, int i = 1);
 
 };
 
