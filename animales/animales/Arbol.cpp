@@ -8,20 +8,11 @@ void Arbol::preOrden() { recorridoPreOrden(root); }
 
 void Arbol::crearArbol(std::ifstream& archivo) { root = cargarArbolArchivo(archivo); }
 
-void Arbol::juego() { 
-	
-	root = recorridoJuego(root);
-	
-}
+void Arbol::juego() { root = recorridoJuego(root); }
 
-void Arbol::bajarCaracteristica(int alto, int bajo) {
-	if (alto == 1) {
-		
-	}
-	else {
-		root = recorridoCaracteristica(root, alto, bajo - alto);
-	}
-}
+void Arbol::bajarCaracteristica(int alto, int bajo) { root = recorridoCaracteristica(root, alto, bajo - alto); }
+
+void Arbol::mostrarEspeciales() { recorridoIzquierda(root); }
 
 void Arbol::save()
 {
@@ -170,6 +161,15 @@ void Arbol::save(std::fstream & file, Nodo * actual)
 	save(file, actual->left);
 	save(file, actual->right);
 
+}
+
+// Recorre el sub-arbol izquierdo de la raiz con el fin
+// de imprimir todas las caracteristicas especiales
+void Arbol::recorridoIzquierda(Nodo* actual , int i) {
+	if (actual->left) { // si tiene izquierda es porque no he llegado al final, el final de la izquierda es un animal
+		std::cout << i << "->" << actual->info->getDato() << std::endl;
+		recorridoIzquierda(actual->left, i + 1);
+	}
 }
 
 
