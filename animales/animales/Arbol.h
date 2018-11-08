@@ -5,6 +5,7 @@
 #include<fstream>
 #include"AnimalCaracteristica.h"
 #include"AnimalConcreto.h"
+#include "Exception.h"
 
 struct Nodo {
 	Animal* info;

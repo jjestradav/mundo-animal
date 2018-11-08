@@ -1,5 +1,5 @@
-1es un anfibio
 1es un reptil
+1es un anfibio
 1es un pez
 1es un mamifero
 1es un ave
@@ -13,15 +13,19 @@ $
 0carpintero
 $
 $
+1es un roedor
 0tigre
+$
+$
+0hamster
 $
 $
 0tiburon
 $
 $
-0cocodrilo
-$
-$
 0salamandra
+$
+$
+0cocodrilo
 $
 $

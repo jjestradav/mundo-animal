@@ -87,8 +87,8 @@ Nodo * Arbol::recorridoJuego(Nodo* actual) {
 	actual->respuesta = e;
 	std::cin.clear();
 	std::cin.ignore(255, '\n');
-
-	if (e == 'S' && tipo == "class AnimalConcreto") 
+	if ((actual->respuesta != 'N') && (actual->respuesta != 'S')) { throw Exception(" Debe de digitar S o N"); return nullptr; }
+	else if (e == 'S' && tipo == "class AnimalConcreto") 
 		return actual;
 	else if (e == 'N' && tipo == "class AnimalConcreto") {
 		std::string animalt = preguntarAnimal(std::cin);
@@ -99,7 +99,7 @@ Nodo * Arbol::recorridoJuego(Nodo* actual) {
 		actual->left = recorridoJuego(actual->left);
 	else 
 		actual->right = recorridoJuego(actual->right);
-
+	
 	return actual;
 }
 
